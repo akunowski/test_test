@@ -33,5 +33,5 @@ jobs:
       - run: git checkout test
       - run: git rebase main test
 #       - run: git switch test
-#       - run: git rebase --autosquash --autostash main test
+#       - run: git rebase --autosquash --autostash origin/main
       - run: git push --force origin test
