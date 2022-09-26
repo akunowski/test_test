@@ -25,10 +25,9 @@ jobs:
       - run: git config user.email github-actions@github.com
       - run: git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
       - run: git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-#       - run: git pull
       - run: git remote -v
       - run: git remote update
       - run: git status
-      - run: git switch test
-      - run: git rebase --autosquash --autostash origin/main origin/test
+#       - run: git switch test
+      - run: git rebase --autosquash --autostash main test
       - run: git push --force origin test
