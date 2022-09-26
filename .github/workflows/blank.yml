@@ -26,11 +26,7 @@ jobs:
       - run: git config user.name github-actions
       - run: git config user.email github-actions@github.com
       - run: git pull
-      - run: git checkout test
-      - run: git pull
-      - run: git merge main
-      - run: git push
-      
-      # some test
-
-
+      - run: git remote -v
+      - run: git remote update
+      - run: git rebase --autosquash --autostash main test
+      - run: git push --force origin test
