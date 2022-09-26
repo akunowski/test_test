@@ -30,6 +30,7 @@ jobs:
       - run: git fetch origin test
       - run: git status
       - run: git checkout -b origin/test
+      - run: git status
       - run: git rebase origin/main
       - run: git push --force-with-lease fork origin/test:test
 
