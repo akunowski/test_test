@@ -29,5 +29,6 @@ jobs:
       - run: git remote -v
       - run: git remote update
       - run: git status
+      - run: git switch origin/test
       - run: git rebase --autosquash --autostash origin/main origin/test
       - run: git push --force origin test
