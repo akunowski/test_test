@@ -28,5 +28,5 @@ jobs:
 #       - run: git pull
       - run: git remote -v
       - run: git remote update
-      - run: git rebase --autosquash --autostash main test
+      - run: git rebase --autosquash --autostash origin/main origin/test
       - run: git push --force origin test
