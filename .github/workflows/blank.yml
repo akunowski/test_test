@@ -6,37 +6,21 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: [ "aa" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  rebase_branches:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Rebase head_branch on base_ref
-          # Recommended: specify a version such as `@v1.0` rather than `@main`
-          uses: DeeDeeG/rebase-github-action@main
-          with:
-            # Head branch, which will be rebased onto the base_ref.
-            head_branch: origin/test
-            # Branch, or Git ref, that the head_branch will be rebased onto.
-            base_ref: origin/main
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  rebase:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-        - run: echo "here"
-#       - run: git init
-#       - run: git config user.name github-actions
-#       - run: git config user.email github-actions@github.com
-#       - run: git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-#       - run: git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+      - run: git init
+      - run: git config user.name github-actions
+      - run: git config user.email github-actions@github.com
+      - run: git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+      - run: git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
   
 #       - run: git fetch --all
 #       - run: git checkout main
@@ -45,15 +29,14 @@ jobs:
 #       - run: git rebase main
 
 
-#       - run: git fetch origin main
-#       - run: git fetch origin test
-#       - run: git fetch --all
-#       - run: git status
-#       - run: git checkout -b test
-# #       - run: git checkout -b origin/test
-#       - run: git status
-#       - run: git rebase origin/test
-#       - run: git push --force-with-lease fork origin/test:test
+      - run: git fetch origin main
+      - run: git fetch origin test
+      - run: git fetch --all
+      - run: git status
+      - run: git checkout -b test
+      - run: git status
+      - run: git rebase origin/test
+      - run: git push --force-with-lease fork origin/test:test
 
 #       - run: git fetch --all
 #       - run: git pull --all
