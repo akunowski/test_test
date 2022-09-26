@@ -29,7 +29,8 @@ jobs:
       - run: git fetch origin main
       - run: git fetch origin test
       - run: git status
-      - run: git checkout -b origin/test
+      - run: git checkout -b main
+#       - run: git checkout -b origin/test
       - run: git status
       - run: git rebase origin test
       - run: git push --force-with-lease fork origin/test:test
