@@ -28,7 +28,7 @@ jobs:
       - run: git pull
       - run: git checkout test
       - run: git pull
-      - run: git rebase main
-      - run: git push --force
+      - run: git merge main
+      - run: git push
 
 
