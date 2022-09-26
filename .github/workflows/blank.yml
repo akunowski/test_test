@@ -26,15 +26,20 @@ jobs:
       - run: git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
       - run: git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
   
-      - run: git fetch origin main
-      - run: git fetch origin test
       - run: git fetch --all
-      - run: git status
-      - run: git checkout -b test
-#       - run: git checkout -b origin/test
-      - run: git status
-      - run: git rebase origin/test
-      - run: git push --force-with-lease fork origin/test:test
+      - run: git checkout main
+      - run: git pull
+      - run: git checkout test
+      - run: git rebase main
+#       - run: git fetch origin main
+#       - run: git fetch origin test
+#       - run: git fetch --all
+#       - run: git status
+#       - run: git checkout -b test
+# #       - run: git checkout -b origin/test
+#       - run: git status
+#       - run: git rebase origin/test
+#       - run: git push --force-with-lease fork origin/test:test
 
 #       - run: git fetch --all
 #       - run: git pull --all
@@ -45,4 +50,4 @@ jobs:
 #       - run: git rebase origin/main
 #       - run: git switch test
 #       - run: git rebase --autosquash --autostash main test
-#       - run: git push --force origin test
+      - run: git push --force test
