@@ -28,7 +28,6 @@ jobs:
       - run: ls
       - run: pwd
       - run: cd test_test
-#       - run: cd ./test_test
 
       - run: ls
       - run: pwd
@@ -52,3 +51,5 @@ jobs:
       - run: git remote main
       - run: git status
       - run: git push -f
+      - shell: bash
+
