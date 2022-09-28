@@ -34,6 +34,6 @@ jobs:
       - run: git pull
       - run: git status
       
-      - run: git rebase main
+      - run: git merge main
       - run: git status
-      - run: git push --force
+      - run: git push
