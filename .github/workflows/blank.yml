@@ -25,10 +25,9 @@ jobs:
       - run: git fetch --all
       - run: git status
       
+      - run: git pull
       - run: git checkout bb
-      - run: git status
-      - run: git fetch main
-      - run: git pull main
+      - run: git pull
       - run: git status
       - run: git rebase
       - run: git status
