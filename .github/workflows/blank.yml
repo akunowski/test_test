@@ -16,10 +16,13 @@ jobs:
   rebase:
     runs-on: ubuntu-latest
     steps:
-      - name: "update" 
-        uses: actions/checkout@v3
+#       - name: "update" 
+#         uses: actions/checkout@v3
       - run: git config user.name github-actions
       - run: git config user.email github-actions@github.com
+      
+      - run: git clone https://github.com/akunowski/test_test
+      - run: cd test_test
 
       - run: git status  
       - run: git fetch --all
@@ -34,6 +37,6 @@ jobs:
       - run: git pull
       - run: git status
       
-      - run: git merge main
+      - run: git remote main
       - run: git status
-      - run: git push
+      - run: git push -f
