@@ -16,27 +16,20 @@ jobs:
   rebase:
     runs-on: ubuntu-latest
     steps:
-      - run: git init
+      - name: "update" 
+        uses: actions/checkout@v3
       - run: git config user.name github-actions
       - run: git config user.email github-actions@github.com
-      - run: git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-      - run: git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-  
+      
+      - run: git status  
       - run: git fetch --all
-#       - run: git checkout main
-#       - run: git pull
-#       - run: git checkout test
-#       - run: git rebase main
-
       - run: git status
-#       - run: git pull main
+      
       - run: git checkout bb
       - run: git pull main
-#       - run: git fetch --all
       - run: git status
       - run: git rebase
       - run: git status
-#       - run: git rebase 
       - run: git push --force
 
 #       - run: git fetch --all
