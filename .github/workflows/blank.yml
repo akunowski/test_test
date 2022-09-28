@@ -21,6 +21,8 @@ jobs:
       - run: git clone https://github.com/akunowski/test_test
       - run: ls
       - run: cd ./test_test
+      - run: cd ./test_test
+
       - run: ls
       - run: pwd
 
