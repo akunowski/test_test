@@ -19,8 +19,10 @@ jobs:
 #       - name: "update" 
 #         uses: actions/checkout@v3
       - run: git clone https://github.com/akunowski/test_test
+      - run: ls
       - run: cd test_test
-
+      - run: ls
+      - run: pwd
 
       - run: git config user.name github-actions
       - run: git config user.email github-actions@github.com
