@@ -27,9 +27,9 @@ jobs:
      
       - run: git checkout main
       - run: git pull
-      - run: git cat main.txt]
+      - run: cat main.txt]
       - run: git checkout bb
-      - run: git cat main.txt]
+      - run: cat main.txt]
       - run: ls
       - run: tree
       - run: git pull
