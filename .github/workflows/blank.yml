@@ -28,12 +28,12 @@ jobs:
       - run: git checkout main
       - run: git pull
       - run: cat main.txt]
+      
       - run: git checkout bb
       - run: cat main.txt]
-      - run: ls
-      - run: tree
       - run: git pull
       - run: git status
+      
       - run: git rebase main
       - run: git status
       - run: git push --force
