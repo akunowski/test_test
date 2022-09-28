@@ -29,7 +29,7 @@ jobs:
       - run: git checkout bb
       - run: git pull
       - run: git status
-      - run: git rebase
+      - run: git rebase main
       - run: git status
       - run: git push --force
 
