@@ -22,21 +22,22 @@ jobs:
       - run: git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
       - run: git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
   
-#       - run: git fetch --all
+      - run: git fetch --all
 #       - run: git checkout main
 #       - run: git pull
 #       - run: git checkout test
 #       - run: git rebase main
 
-
-      - run: git pull origin main
-      - run: git pull origin test
+      - run: git status
+#       - run: git pull main
+      - run: git checkout bb
+      - run: git pull main
 #       - run: git fetch --all
       - run: git status
-      - run: git checkout -b test
+      - run: git rebase
       - run: git status
-      - run: git rebase 
-      - run: git push --force-with-lease
+#       - run: git rebase 
+      - run: git push --force
 
 #       - run: git fetch --all
 #       - run: git pull --all
